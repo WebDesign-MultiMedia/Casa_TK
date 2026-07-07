@@ -61,7 +61,7 @@ export default function Navbar() {
 
           <Link
             to="/contact"
-            className="hidden md:inline-block rounded-full bg-tk-pink px-5 py-2 font-display font-bold text-tk-ink shadow-sm hover:bg-tk-pink-dark hover:text-white transition-colors"
+            className="hidden md:inline-block rounded-full bg-tk-pink px-5 py-2 font-display font-bold text-black shadow-sm hover:bg-tk-pink-dark hover:text-white transition-colors"
           >
             {t.nav.cta}
           </Link>
@@ -102,7 +102,7 @@ export default function Navbar() {
 function MobileMenu({ t, onClose, onNavClick }) {
   const linkClass = ({ isActive }) =>
     `block font-display text-4xl font-bold transition-colors ${
-      isActive ? "text-tk-pink" : "text-tk-cream hover:text-tk-pink"
+      isActive ? "text-tk-pink-light" : "text-tk-cream hover:text-tk-pink-light"
     }`;
 
   return (
@@ -159,7 +159,7 @@ function MobileMenu({ t, onClose, onNavClick }) {
         <Link
           to="/contact"
           onClick={onNavClick}
-          className="rounded-full bg-tk-pink px-5 py-2 font-display font-bold text-tk-ink shadow-sm hover:bg-tk-cream transition-colors"
+          className="rounded-full bg-tk-pink px-5 py-2 font-display font-bold text-black shadow-sm hover:bg-tk-cream transition-colors"
         >
           {t.nav.cta}
         </Link>

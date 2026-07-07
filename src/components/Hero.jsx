@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -6,8 +6,26 @@ import { useLanguage } from "../context/LanguageContext";
 // other than Home never have to fetch it.
 const CoffeeShop3D = lazy(() => import("./CoffeeShop3D"));
 
+const model3DFallback = (
+  <div className="h-72 sm:h-96 w-full animate-pulse rounded-3xl bg-tk-cream/10" />
+);
+
 export default function Hero() {
   const { t } = useLanguage();
+  const [ready3D, setReady3D] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Wait until the browser is idle (or ~300ms on Safari, which lacks
+    // requestIdleCallback) before even fetching the three.js chunk, so it
+    // doesn't compete with the Hero's text/CTA for bandwidth and
+    // main-thread time during first paint.
+    const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 300));
+    const cancelIdle = window.cancelIdleCallback || clearTimeout;
+    const id = idle(() => setReady3D(true));
+    return () => cancelIdle(id);
+  }, []);
 
   return (
     <section className="relative flex items-center pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden bg-gradient-to-br from-tk-pink-dark via-tk-plum to-tk-plum-dark text-tk-cream">
@@ -17,7 +35,7 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 grid gap-6 md:grid-cols-2 md:items-center">
         <div>
-          <span className="inline-block rounded-full bg-tk-pink px-4 py-1.5 text-sm font-display font-bold text-tk-ink">
+          <span className="inline-block rounded-full bg-tk-pink px-4 py-1.5 text-sm font-display font-bold text-black">
             {t.hero.eyebrow}
           </span>
 
@@ -40,7 +58,7 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <Link
               to="/menu"
-              className="rounded-full bg-tk-pink px-7 py-3 font-display font-bold text-tk-ink shadow-lg hover:bg-tk-pink-dark hover:text-white transition-colors"
+              className="rounded-full bg-tk-pink px-7 py-3 font-display font-bold text-black shadow-lg hover:bg-tk-pink-dark hover:text-white transition-colors"
             >
               {t.hero.ctaPrimary}
             </Link>
@@ -52,17 +70,21 @@ export default function Hero() {
             </Link>
           </div>
 
-          <p className="mt-6 font-display font-semibold text-tk-pink">
+          <p className="mt-6 font-display font-semibold text-tk-pink-light">
             {t.hero.badge}
           </p>
         </div>
 
-        {/* Animated 3D storefront — drag to spin it, it also auto-rotates */}
-        <Suspense
-          fallback={<div className="h-72 sm:h-96 w-full animate-pulse rounded-3xl bg-tk-cream/10" />}
-        >
-          <CoffeeShop3D />
-        </Suspense>
+        {/* Animated 3D storefront — drag to spin it, it also auto-rotates.
+            Mounted only once idle (see effect above) so it never delays
+            the Hero's initial paint. */}
+        {ready3D ? (
+          <Suspense fallback={model3DFallback}>
+            <CoffeeShop3D />
+          </Suspense>
+        ) : (
+          model3DFallback
+        )}
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-tk-pink">
+            <p className="text-xs font-semibold uppercase tracking-wide text-tk-pink-light">
               {t.contact.hoursLabel}
             </p>
             <ul className="mt-2 space-y-1 text-sm">
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-tk-pink">
+            <p className="text-xs font-semibold uppercase tracking-wide text-tk-pink-light">
               {t.footer.followLabel}
             </p>
             <ul className="mt-2 space-y-1 text-sm">

@@ -87,7 +87,7 @@ export default function Contact() {
                 href={business.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-full bg-tk-pink px-6 py-3 font-display font-bold text-tk-ink hover:bg-tk-pink-dark hover:text-white transition-colors"
+                className="inline-block rounded-full bg-tk-pink px-6 py-3 font-display font-bold text-black hover:bg-tk-pink-dark hover:text-white transition-colors"
               >
                 {t.contact.mapLink}
               </a>
@@ -160,7 +160,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="mt-6 w-full rounded-full bg-tk-pink py-3 font-display font-bold text-tk-ink shadow-md hover:bg-tk-pink-dark hover:text-white transition-colors disabled:opacity-60"
+                className="mt-6 w-full rounded-full bg-tk-pink py-3 font-display font-bold text-black shadow-md hover:bg-tk-pink-dark hover:text-white transition-colors disabled:opacity-60"
               >
                 {status === "submitting" ? t.contact.submitting : t.contact.submit}
               </button>
@@ -181,7 +181,7 @@ export default function Contact() {
 function InfoRow({ label, children }) {
   return (
     <div>
-      <p className="text-sm font-semibold uppercase tracking-wide text-tk-pink">{label}</p>
+      <p className="text-sm font-semibold uppercase tracking-wide text-tk-pink-light">{label}</p>
       <div className="mt-1 text-lg">{children}</div>
     </div>
   );
