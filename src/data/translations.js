@@ -3,6 +3,38 @@
 // without duplicating markup in every component.
 export const translations = {
   en: {
+    meta: {
+      home: {
+        title: "Casa TK | Bronx Coffee Shop & Bakery in Soundview, NY",
+        description:
+          "Casa TK is a women-owned coffee shop and bakery in Soundview, Bronx serving fresh Mexican pan dulce, espresso drinks, and aguas frescas daily from 6am.",
+      },
+      menu: {
+        title: "Menu | Casa TK Coffee & Bakery",
+        description:
+          "Explore Casa TK's menu: espresso drinks, Mexican-candy iced lattes, matcha, aguas frescas, Mexican sodas, and fresh pan dulce in Soundview, Bronx.",
+      },
+      about: {
+        title: "About Us | Casa TK Bronx Coffee Shop",
+        description:
+          "Casa TK is a women-owned coffee shop and bakery in Soundview, The Bronx, making everything from scratch in small batches, open early to late every day.",
+      },
+      gallery: {
+        title: "Gallery | Casa TK Coffee & Bakery",
+        description:
+          "See real photos of Casa TK's storefront, coffee bar, and bakery case in Soundview, Bronx — straight from our Google listing.",
+      },
+      reviews: {
+        title: "Reviews | Casa TK Coffee & Bakery",
+        description:
+          "4.9 out of 5 on Google. See what the Soundview, Bronx neighborhood is saying about Casa TK's coffee, pan dulce, and service.",
+      },
+      contact: {
+        title: "Visit Us | Casa TK, 1497 Westchester Ave, Bronx",
+        description:
+          "Visit Casa TK at 1497 Westchester Ave, Soundview, Bronx. Call, get directions, or send a message — open daily from 6am.",
+      },
+    },
     nav: {
       home: "Home",
       services: "Menu",
@@ -135,6 +167,38 @@ export const translations = {
     },
   },
   es: {
+    meta: {
+      home: {
+        title: "Casa TK | Cafetería y Panadería en Soundview, Bronx",
+        description:
+          "Casa TK es una cafetería y panadería de mujeres en Soundview, El Bronx, con pan dulce mexicano fresco, café espresso y aguas frescas todos los días desde las 6am.",
+      },
+      menu: {
+        title: "Menú | Casa TK Cafetería y Panadería",
+        description:
+          "Descubre el menú de Casa TK: café espresso, lattes de dulces mexicanos, matcha, aguas frescas, refrescos mexicanos y pan dulce fresco en Soundview, El Bronx.",
+      },
+      about: {
+        title: "Nosotros | Casa TK Cafetería en El Bronx",
+        description:
+          "Casa TK es una cafetería de mujeres en Soundview, El Bronx, donde todo se hace desde cero en tandas pequeñas, abierta desde temprano hasta tarde todos los días.",
+      },
+      gallery: {
+        title: "Galería | Casa TK Cafetería y Panadería",
+        description:
+          "Mira fotos reales de la fachada, la barra de café y la vitrina de postres de Casa TK en Soundview, El Bronx — directo de nuestro perfil de Google.",
+      },
+      reviews: {
+        title: "Reseñas | Casa TK Cafetería y Panadería",
+        description:
+          "4.9 de 5 en Google. Mira lo que dice el vecindario de Soundview, El Bronx sobre el café, el pan dulce y el servicio de Casa TK.",
+      },
+      contact: {
+        title: "Visítanos | Casa TK, 1497 Westchester Ave, Bronx",
+        description:
+          "Visita Casa TK en 1497 Westchester Ave, Soundview, El Bronx. Llama, pide direcciones o envía un mensaje — abierto todos los días desde las 6am.",
+      },
+    },
     nav: {
       home: "Inicio",
       services: "Menú",
