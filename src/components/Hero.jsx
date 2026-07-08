@@ -1,31 +1,8 @@
-import { lazy, Suspense, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 
-// three.js is a heavy dependency — split it into its own chunk so pages
-// other than Home never have to fetch it.
-const CoffeeShop3D = lazy(() => import("./CoffeeShop3D"));
-
-const model3DFallback = (
-  <div className="h-72 sm:h-96 w-full animate-pulse rounded-3xl bg-tk-cream/10" />
-);
-
 export default function Hero() {
   const { t } = useLanguage();
-  const [ready3D, setReady3D] = useState(false);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    // Wait until the browser is idle (or ~300ms on Safari, which lacks
-    // requestIdleCallback) before even fetching the three.js chunk, so it
-    // doesn't compete with the Hero's text/CTA for bandwidth and
-    // main-thread time during first paint.
-    const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 300));
-    const cancelIdle = window.cancelIdleCallback || clearTimeout;
-    const id = idle(() => setReady3D(true));
-    return () => cancelIdle(id);
-  }, []);
 
   return (
     <section className="relative flex items-center pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden bg-gradient-to-br from-tk-pink-dark via-tk-plum to-tk-plum-dark text-tk-cream">
@@ -75,16 +52,13 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Animated 3D storefront — drag to spin it, it also auto-rotates.
-            Mounted only once idle (see effect above) so it never delays
-            the Hero's initial paint. */}
-        {ready3D ? (
-          <Suspense fallback={model3DFallback}>
-            <CoffeeShop3D />
-          </Suspense>
-        ) : (
-          model3DFallback
-        )}
+        <div className="flex items-center justify-center">
+          <img
+            src="/logo.jpeg"
+            alt="Casa TK logo"
+            className="h-64 w-64 sm:h-80 sm:w-80 rounded-full object-cover shadow-2xl"
+          />
+        </div>
       </div>
     </section>
   );
