@@ -14,7 +14,7 @@ export default function StructuredData() {
       image: `${SITE_URL}/gallery/bakery-case-2.jpg`,
       url: SITE_URL,
       telephone: business.phoneHref,
-      priceRange: "$",
+      priceRange: business.priceRange,
       servesCuisine: "Mexican bakery, coffee",
       address: {
         "@type": "PostalAddress",
@@ -23,6 +23,11 @@ export default function StructuredData() {
         addressRegion: "NY",
         postalCode: "10472",
         addressCountry: "US",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: business.coordinates.lat,
+        longitude: business.coordinates.lng,
       },
       aggregateRating: {
         "@type": "AggregateRating",
@@ -33,22 +38,21 @@ export default function StructuredData() {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Tuesday",
+          opens: "08:00",
+          closes: "22:30",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
           dayOfWeek: [
-            "Monday",
-            "Tuesday",
             "Wednesday",
             "Thursday",
             "Friday",
             "Saturday",
+            "Sunday",
           ],
-          opens: "06:00",
+          opens: "08:00",
           closes: "23:59",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Sunday",
-          opens: "06:00",
-          closes: "22:00",
         },
       ],
     };

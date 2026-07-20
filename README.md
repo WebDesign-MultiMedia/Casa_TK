@@ -2,7 +2,7 @@
 
 **Live site:** [https://casa-tk.vercel.app/](https://casa-tk.vercel.app/)
 
-Casa TK is a women-owned coffee shop and bakery in Soundview, The Bronx (1497 Westchester Ave), serving Mexican pan dulce, specialty coffee, and dessert cups from 6am to midnight most days. This repo is the source for its marketing site — a bilingual, multi-page React app built to give the shop a real online presence: real menu items, real Google-listing photos, real hours and contact info, and a 3D animated storefront on the homepage.
+Casa TK is a women-owned coffee shop and bakery in Soundview, The Bronx (1497 Westchester Ave), serving Mexican pan dulce, specialty coffee, and dessert cups from 8am to midnight most days (closed Mondays). This repo is the source for its marketing site — a bilingual, multi-page React app built to give the shop a real online presence: real menu items, real Google-listing photos, real hours and contact info, and a 3D animated storefront on the homepage.
 
 ## What's on the site
 

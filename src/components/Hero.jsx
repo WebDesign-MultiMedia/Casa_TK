@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 grid gap-6 md:grid-cols-2 md:items-center">
         <div>
-          <span className="inline-block rounded-full bg-tk-pink px-4 py-1.5 text-sm font-display font-bold text-black">
+          <span className="inline-block rounded-full bg-tk-pink px-4 py-1.5 text-sm font-display font-bold text-white">
             {t.hero.eyebrow}
           </span>
 
@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <Link
               to="/menu"
-              className="rounded-full bg-tk-pink px-7 py-3 font-display font-bold text-black shadow-lg hover:bg-tk-pink-dark hover:text-white transition-colors"
+              className="rounded-full bg-tk-pink px-7 py-3 font-display font-bold text-white shadow-lg hover:bg-tk-pink-dark transition-colors"
             >
               {t.hero.ctaPrimary}
             </Link>

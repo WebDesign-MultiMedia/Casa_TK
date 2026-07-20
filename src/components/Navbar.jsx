@@ -61,7 +61,7 @@ export default function Navbar() {
 
           <Link
             to="/contact"
-            className="hidden md:inline-block rounded-full bg-tk-pink px-5 py-2 font-display font-bold text-black shadow-sm hover:bg-tk-pink-dark hover:text-white transition-colors"
+            className="hidden md:inline-block rounded-full bg-tk-pink px-5 py-2 font-display font-bold text-white shadow-sm hover:bg-tk-pink-dark transition-colors"
           >
             {t.nav.cta}
           </Link>
@@ -159,7 +159,7 @@ function MobileMenu({ t, onClose, onNavClick }) {
         <Link
           to="/contact"
           onClick={onNavClick}
-          className="rounded-full bg-tk-pink px-5 py-2 font-display font-bold text-black shadow-sm hover:bg-tk-cream transition-colors"
+          className="rounded-full bg-tk-pink px-5 py-2 font-display font-bold text-white shadow-sm hover:bg-tk-cream hover:text-tk-ink transition-colors"
         >
           {t.nav.cta}
         </Link>

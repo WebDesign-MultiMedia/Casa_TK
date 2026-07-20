@@ -7,7 +7,7 @@ export const translations = {
       home: {
         title: "Casa TK | Bronx Coffee Shop & Bakery in Soundview, NY",
         description:
-          "Casa TK is a women-owned coffee shop and bakery in Soundview, Bronx serving fresh Mexican pan dulce, espresso drinks, and aguas frescas daily from 6am.",
+          "Casa TK is a women-owned coffee shop and bakery in Soundview, Bronx serving fresh Mexican pan dulce, espresso drinks, and aguas frescas six days a week from 8am.",
       },
       menu: {
         title: "Menu | Casa TK Coffee & Bakery",
@@ -17,7 +17,7 @@ export const translations = {
       about: {
         title: "About Us | Casa TK Bronx Coffee Shop",
         description:
-          "Casa TK is a women-owned coffee shop and bakery in Soundview, The Bronx, making everything from scratch in small batches, open early to late every day.",
+          "Casa TK is a women-owned coffee shop and bakery in Soundview, The Bronx, making everything from scratch in small batches, open early to late six days a week.",
       },
       gallery: {
         title: "Gallery | Casa TK Coffee & Bakery",
@@ -32,7 +32,7 @@ export const translations = {
       contact: {
         title: "Visit Us | Casa TK, 1497 Westchester Ave, Bronx",
         description:
-          "Visit Casa TK at 1497 Westchester Ave, Soundview, Bronx. Call, get directions, or send a message — open daily from 6am.",
+          "Visit Casa TK at 1497 Westchester Ave, Soundview, Bronx. Call, get directions, or send a message — open six days a week from 8am.",
       },
     },
     nav: {
@@ -48,7 +48,7 @@ export const translations = {
       eyebrow: "Soundview, Bronx • Women-Owned",
       headline: "Your home away from home, one cafecito at a time.",
       subhead:
-        "Fresh Mexican pan dulce, slow-brewed coffee, and breakfast comfort food made from scratch — open early, open late, every single day.",
+        "Fresh Mexican pan dulce, slow-brewed coffee, and breakfast comfort food made from scratch — open early, open late, six days a week.",
       ctaPrimary: "See The Menu",
       ctaSecondary: "Get Directions",
       badge: "4.9 ★ · New Yorkers' 1st Choice",
@@ -94,10 +94,10 @@ export const translations = {
       title: "About Casa TK",
       p1: "Casa TK is a women-owned coffee shop and bakery tucked into Soundview, The Bronx — the kind of corner spot where the barista learns your order by your second visit.",
       p2: "Everything is made from scratch, in small batches, with the kind of care that takes time. We'd rather you wait a few extra minutes for a concha that's actually fresh than rush you through a shortcut.",
-      p3: "We built Casa TK to be flexible: early enough for the 6am shift crew, cozy enough for a first date, quiet enough for a chapter of your book, and open late enough for whoever needs a sweet something after midnight.",
+      p3: "We built Casa TK to be flexible: early enough for the 8am shift crew, cozy enough for a first date, quiet enough for a chapter of your book, and open late enough for whoever needs a sweet something after midnight.",
       stats: [
         { label: "Rating", value: "4.9 / 5" },
-        { label: "Open", value: "6AM – Midnight" },
+        { label: "Open", value: "Tue–Sun, 8AM–12AM" },
         { label: "Neighborhood", value: "Soundview, Bronx" },
         { label: "Owned By", value: "Local Women" },
       ],
@@ -139,8 +139,9 @@ export const translations = {
       phoneLabel: "Phone",
       hoursLabel: "Hours",
       hours: [
-        { days: "Monday – Saturday", time: "6:00 AM – 12:00 AM" },
-        { days: "Sunday", time: "6:00 AM – 10:00 PM" },
+        { days: "Monday", time: "Closed" },
+        { days: "Tuesday", time: "8:00 AM – 10:30 PM" },
+        { days: "Wednesday – Sunday", time: "8:00 AM – 12:00 AM" },
       ],
       instagramLabel: "Instagram",
       tiktokLabel: "TikTok",
@@ -171,7 +172,7 @@ export const translations = {
       home: {
         title: "Casa TK | Cafetería y Panadería en Soundview, Bronx",
         description:
-          "Casa TK es una cafetería y panadería de mujeres en Soundview, El Bronx, con pan dulce mexicano fresco, café espresso y aguas frescas todos los días desde las 6am.",
+          "Casa TK es una cafetería y panadería de mujeres en Soundview, El Bronx, con pan dulce mexicano fresco, café espresso y aguas frescas seis días a la semana desde las 8am.",
       },
       menu: {
         title: "Menú | Casa TK Cafetería y Panadería",
@@ -181,7 +182,7 @@ export const translations = {
       about: {
         title: "Nosotros | Casa TK Cafetería en El Bronx",
         description:
-          "Casa TK es una cafetería de mujeres en Soundview, El Bronx, donde todo se hace desde cero en tandas pequeñas, abierta desde temprano hasta tarde todos los días.",
+          "Casa TK es una cafetería de mujeres en Soundview, El Bronx, donde todo se hace desde cero en tandas pequeñas, abierta desde temprano hasta tarde seis días a la semana.",
       },
       gallery: {
         title: "Galería | Casa TK Cafetería y Panadería",
@@ -196,7 +197,7 @@ export const translations = {
       contact: {
         title: "Visítanos | Casa TK, 1497 Westchester Ave, Bronx",
         description:
-          "Visita Casa TK en 1497 Westchester Ave, Soundview, El Bronx. Llama, pide direcciones o envía un mensaje — abierto todos los días desde las 6am.",
+          "Visita Casa TK en 1497 Westchester Ave, Soundview, El Bronx. Llama, pide direcciones o envía un mensaje — abierto seis días a la semana desde las 8am.",
       },
     },
     nav: {
@@ -212,7 +213,7 @@ export const translations = {
       eyebrow: "Soundview, Bronx • Negocio de Mujeres",
       headline: "Tu segunda casa, un cafecito a la vez.",
       subhead:
-        "Pan dulce mexicano recién horneado, café de grano lento y desayunos caseros hechos desde cero — abrimos temprano, cerramos tarde, todos los días.",
+        "Pan dulce mexicano recién horneado, café de grano lento y desayunos caseros hechos desde cero — abrimos temprano, cerramos tarde, seis días a la semana.",
       ctaPrimary: "Ver El Menú",
       ctaSecondary: "Cómo Llegar",
       badge: "4.9 ★ · Favorito De Los Neoyorquinos",
@@ -258,10 +259,10 @@ export const translations = {
       title: "Sobre Casa TK",
       p1: "Casa TK es una cafetería y panadería de dueñas mujeres ubicada en Soundview, El Bronx — el tipo de esquina donde el barista aprende tu orden desde tu segunda visita.",
       p2: "Todo se hace desde cero, en tandas pequeñas, con el cuidado que toma tiempo. Preferimos que esperes unos minutos más por una concha realmente fresca que apresurarte con un atajo.",
-      p3: "Creamos Casa TK para ser flexible: lo suficientemente temprano para el turno de las 6am, acogedor para una primera cita, tranquilo para leer un capítulo de tu libro, y abierto hasta tarde para quien necesite algo dulce después de medianoche.",
+      p3: "Creamos Casa TK para ser flexible: lo suficientemente temprano para el turno de las 8am, acogedor para una primera cita, tranquilo para leer un capítulo de tu libro, y abierto hasta tarde para quien necesite algo dulce después de medianoche.",
       stats: [
         { label: "Calificación", value: "4.9 / 5" },
-        { label: "Horario", value: "6AM – Medianoche" },
+        { label: "Horario", value: "Mar–Dom, 8AM–12AM" },
         { label: "Vecindario", value: "Soundview, Bronx" },
         { label: "Propiedad De", value: "Mujeres Locales" },
       ],
@@ -303,8 +304,9 @@ export const translations = {
       phoneLabel: "Teléfono",
       hoursLabel: "Horario",
       hours: [
-        { days: "Lunes – Sábado", time: "6:00 AM – 12:00 AM" },
-        { days: "Domingo", time: "6:00 AM – 10:00 PM" },
+        { days: "Lunes", time: "Cerrado" },
+        { days: "Martes", time: "8:00 AM – 10:30 PM" },
+        { days: "Miércoles – Domingo", time: "8:00 AM – 12:00 AM" },
       ],
       instagramLabel: "Instagram",
       tiktokLabel: "TikTok",
