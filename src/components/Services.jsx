@@ -1,4 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
+import { Container, PageHeader, Reveal } from "./ui";
 
 // Small hand-picked icon set (no icon library dependency) mapped by key
 // so the copy deck in translations.js can stay in charge of ordering.
@@ -51,57 +52,49 @@ export default function Services() {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="scroll-mt-20 py-8 sm:py-12">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="rounded-3xl bg-tk-cream/95 shadow-xl px-6 py-10 sm:px-10 sm:py-16">
-          <SectionHeading title={t.services.title} subtitle={t.services.subtitle} />
+    <>
+      <PageHeader eyebrow={t.services.eyebrow} title={t.services.title} subtitle={t.services.subtitle} />
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {t.services.items.map((item) => (
-              <article
+      <section className="pb-24 sm:pb-32">
+        <Container className="grid gap-16 lg:grid-cols-12 lg:gap-20">
+          <Reveal className="lg:col-span-5">
+            <div className="lg:sticky lg:top-28">
+              <div className="mx-auto max-w-sm overflow-hidden rounded-t-full rounded-b-[2.5rem] bg-tk-ink ring-8 ring-white lg:max-w-none">
+                <img
+                  src="/gallery/menu-board.jpg"
+                  alt="Chalkboard drinks menu listing hot and cold coffee, matcha, and aguas frescas"
+                  loading="lazy"
+                  className="aspect-[3/4] w-full object-cover"
+                />
+              </div>
+            </div>
+          </Reveal>
+
+          <ol className="lg:col-span-7">
+            {t.services.items.map((item, i) => (
+              <Reveal
+                as="li"
                 key={item.name}
-                className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-tk-pink-light hover:shadow-lg hover:-translate-y-1 transition-all"
+                delay={(i % 3) * 70}
+                className="group grid grid-cols-[auto_1fr] gap-6 border-t border-tk-line py-9 first:border-t-0 first:pt-0 sm:gap-8"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-tk-pink-light text-tk-pink-dark">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.8}
-                  >
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-tk-blush text-tk-pink-dark transition-colors duration-300 group-hover:bg-tk-ink group-hover:text-tk-paper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-6 w-6" aria-hidden="true">
                     {ICONS[item.icon]}
                   </svg>
                 </div>
-                <h3 className="mt-4 font-display text-xl font-bold text-tk-ink">
-                  {item.name}
-                </h3>
-                <p className="mt-2 text-tk-ink-soft">{item.desc}</p>
-              </article>
+                <div>
+                  <p className="text-xs font-semibold tracking-[0.2em] text-tk-ink-soft/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <h2 className="mt-1 font-display text-2xl tracking-tight text-tk-ink sm:text-3xl">{item.name}</h2>
+                  <p className="mt-3 max-w-lg leading-relaxed text-tk-ink-soft">{item.desc}</p>
+                </div>
+              </Reveal>
             ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function SectionHeading({ title, subtitle, light = false }) {
-  return (
-    <div className="max-w-2xl">
-      <h2
-        className={`font-display text-3xl sm:text-4xl font-extrabold ${
-          light ? "text-tk-cream" : "text-tk-ink"
-        }`}
-      >
-        {title}
-      </h2>
-      {subtitle && (
-        <p className={`mt-3 text-lg ${light ? "text-tk-cream/80" : "text-tk-ink-soft"}`}>
-          {subtitle}
-        </p>
-      )}
-    </div>
+          </ol>
+        </Container>
+      </section>
+    </>
   );
 }

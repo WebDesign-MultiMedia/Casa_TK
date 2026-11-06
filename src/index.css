@@ -1,29 +1,74 @@
 @import "tailwindcss";
 
 @theme {
-  /* Muted rose-to-wine palette matched directly against the client's
-     reference gradient swatch (sampled at 0/30/60/85% across its width). */
+  /* Warm, airy base pulled from the shop itself: blush walls, cream
+     script in the logo, deep plum signage. Pinks are used as accents on a
+     cream "paper" ground instead of as full-page gradients, so photos and
+     copy get room to breathe. */
+  --color-tk-paper: #fcf8f4;
+  --color-tk-cream: #f6ede4;
+  --color-tk-line: #ece0d6;
+  --color-tk-blush: #f9e4eb;
+  --color-tk-rose: #f3b6ca;
   --color-tk-pink: #c65782;
   --color-tk-pink-dark: #9e3e66;
   --color-tk-pink-light: #f6e6ec;
-  --color-tk-cream: #fbf1e4;
-  --color-tk-ink: #211c2c;
-  --color-tk-ink-soft: #3a3348;
   --color-tk-plum: #7d2a4e;
-  --color-tk-plum-dark: #551a37;
+  --color-tk-plum-dark: #3a1428;
+  --color-tk-ink: #211c2c;
+  --color-tk-ink-soft: #5b5266;
+  --color-tk-sage: #2f5249;
 
-  --font-display: "Baloo 2", "system-ui", sans-serif;
-  --font-body: "Inter", "system-ui", sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-spin-slow: spin 24s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: var(--font-body);
+  background: var(--color-tk-paper);
+  color: var(--color-tk-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-tk-rose);
+  color: var(--color-tk-ink);
+}
+
+/* Soft serif with the "SOFT" axis turned up reads friendlier than a
+   sharp editorial serif — elegant but still a neighborhood café. */
+.font-display {
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-tk-pink-dark);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 @keyframes page-fade-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -32,17 +77,52 @@ html {
 }
 
 .page-transition {
-  animation: page-fade-in 0.32s ease-out;
+  animation: page-fade-in 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body {
-  font-family: var(--font-body);
-  background: linear-gradient(
-    90deg,
-    var(--color-tk-pink) 0%,
-    var(--color-tk-pink-dark) 30%,
-    var(--color-tk-plum) 65%,
-    var(--color-tk-plum-dark) 100%
-  );
-  color: var(--color-tk-ink);
+/* Scroll-reveal: elements fade up the first time they enter the viewport. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Subtle paper grain so large cream areas don't feel flat. */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: radial-gradient(rgb(33 28 44 / 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .page-transition,
+  .animate-marquee,
+  .animate-spin-slow {
+    animation: none;
+  }
 }

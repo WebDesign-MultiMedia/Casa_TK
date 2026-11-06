@@ -25,4 +25,16 @@ export const business = {
   priceRangeReviewCount: 26,
   serviceOptions: ["Dine-in", "Takeout"],
   attributes: ["LGBTQ+ friendly", "Identifies as women-owned"],
+  timeZone: "America/New_York",
+  // Indexed like Date#getDay(): 0 = Sunday … 6 = Saturday. "24:00" means
+  // closing at midnight. Drives the live open/closed badge.
+  hoursByDay: [
+    { open: "08:00", close: "24:00" }, // Sun
+    null, // Mon — closed
+    { open: "08:00", close: "22:30" }, // Tue
+    { open: "08:00", close: "24:00" }, // Wed
+    { open: "08:00", close: "24:00" }, // Thu
+    { open: "08:00", close: "24:00" }, // Fri
+    { open: "08:00", close: "24:00" }, // Sat
+  ],
 };
