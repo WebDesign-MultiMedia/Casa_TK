@@ -88,7 +88,7 @@ export const translations = {
         items: [
           { name: "Strawberry Matcha", desc: "Layered, iced, and as pretty as it tastes." },
           { name: "Loaded Dessert Cups", desc: "Oreos, M&M's, strawberries, and a lot of love." },
-          { name: "The Bakery Case", desc: "Chocolate-covered strawberries and fresh cake, daily." },
+          { name: "The Bakery Case", desc: "Chocolate-covered strawberries and fresh cake by the slice." },
         ],
       },
       story: {
@@ -317,7 +317,7 @@ export const translations = {
         items: [
           { name: "Matcha De Fresa", desc: "En capas, helado y tan bonito como sabe." },
           { name: "Vasos De Postre", desc: "Oreos, M&M's, fresas y mucho cariño." },
-          { name: "La Vitrina", desc: "Fresas con chocolate y pastel fresco, todos los días." },
+          { name: "La Vitrina", desc: "Fresas con chocolate y pastel fresco por rebanada." },
         ],
       },
       story: {
