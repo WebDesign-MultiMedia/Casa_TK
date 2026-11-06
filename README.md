@@ -1,7 +1,7 @@
 # Casa TK: Bronx Coffee & Bakery Website
 
 **🌐 Live site:** [casa-tk.vercel.app](https://casa-tk.vercel.app/)  
-**💻 Source code:** [github.com/webdesign-multimedia/casa_tk](https://github.com/webdesign-multimedia/casa_tk)
+**💻 Source code:** [github.com/WebDesign-MultiMedia/Casa_TK](https://github.com/WebDesign-MultiMedia/Casa_TK)
 
 ![Casa TK homepage](docs/screenshots/home.jpg)
 
@@ -152,7 +152,7 @@ There are **no UI component libraries, icon libraries or animation libraries**. 
 ## Project structure
 
 ```
-casa_tk/
+Casa_TK/
 ├── index.html                 # HTML shell: SEO meta tags, Open Graph tags, font loading
 ├── vercel.json                # Rewrite rule so deep links like /menu work on refresh
 ├── public/
@@ -251,8 +251,8 @@ You need **[Node.js](https://nodejs.org/) 20.19 or newer** (22 LTS recommended).
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/webdesign-multimedia/casa_tk.git
-cd casa_tk
+git clone https://github.com/WebDesign-MultiMedia/Casa_TK.git
+cd Casa_TK
 
 # 2. Install dependencies
 npm install
