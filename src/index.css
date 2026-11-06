@@ -94,9 +94,11 @@ body {
   transform: none;
 }
 
-/* Subtle paper grain so large cream areas don't feel flat. */
+/* Subtle paper grain so large cream areas don't feel flat. Deliberately
+   does NOT set `position` — this rule is unlayered, so it would override
+   Tailwind's `fixed`/`absolute` utilities (it once turned the full-screen
+   mobile menu into an in-flow block). Pair it with `relative` or `fixed`. */
 .grain {
-  position: relative;
   isolation: isolate;
 }
 

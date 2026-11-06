@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="page-transition lg:col-span-6">
           <OpenStatus />
 
-          <h1 className="mt-8 font-display text-[2.9rem] leading-[1.02] font-light tracking-tight text-balance text-tk-ink sm:text-6xl lg:text-7xl">
+          <h1 className="mt-8 font-display text-[2.9rem] leading-[1.02] font-light tracking-tight text-balance text-tk-ink sm:text-6xl lg:text-[3.75rem] xl:text-7xl">
             {t.hero.headlineStart}
             <em className="font-normal text-tk-pink-dark">{t.hero.headlineEm}</em>
             {t.hero.headlineEnd}

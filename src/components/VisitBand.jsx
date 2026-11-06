@@ -57,9 +57,9 @@ export default function VisitBand() {
                   <dd className="w-full">
                     <ul className="space-y-1.5">
                       {t.contact.hours.map((row) => (
-                        <li key={row.days} className="flex justify-between gap-6 text-sm">
+                        <li key={row.days} className="flex flex-wrap justify-between gap-x-6 gap-y-0.5 text-sm">
                           <span className="text-tk-cream/60">{row.days}</span>
-                          <span>{row.time}</span>
+                          <span className="whitespace-nowrap">{row.time}</span>
                         </li>
                       ))}
                     </ul>

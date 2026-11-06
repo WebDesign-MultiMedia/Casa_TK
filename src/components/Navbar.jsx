@@ -121,12 +121,12 @@ function MobileMenu({ t, onClose, onNavClick }) {
       role="dialog"
       aria-modal="true"
       aria-label="Menu"
-      className="page-transition grain fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-tk-paper lg:hidden"
+      className="page-transition grain fixed inset-0 z-[60] flex flex-col overflow-x-hidden overflow-y-auto overscroll-contain bg-tk-paper lg:hidden"
     >
-      <div
-        className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-tk-rose/50 blur-3xl"
-        aria-hidden="true"
-      />
+      {/* Glow lives in its own clipped layer so it can't widen the scrollable menu. */}
+      <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-tk-rose/50 blur-3xl" />
+      </div>
 
       <div className="relative flex items-center justify-between px-5 pt-5">
         <Link to="/" onClick={onNavClick} className="flex items-center gap-2.5">

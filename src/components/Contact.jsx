@@ -52,7 +52,7 @@ export default function Contact() {
 
       <section className="pb-24 sm:pb-32">
         <Container className="grid gap-8 lg:grid-cols-12">
-          <Reveal className="space-y-4 lg:col-span-5">
+          <Reveal className="min-w-0 space-y-4 lg:col-span-5">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
               <InfoCard icon="pin" label={t.contact.addressLabel}>
                 {business.address.line1}
@@ -61,7 +61,10 @@ export default function Contact() {
               </InfoCard>
 
               <InfoCard icon="phone" label={t.contact.phoneLabel}>
-                <a href={`tel:${business.phoneHref}`} className="transition-colors hover:text-tk-pink-dark">
+                <a
+                  href={`tel:${business.phoneHref}`}
+                  className="-my-2 inline-block py-2 transition-colors hover:text-tk-pink-dark"
+                >
                   {business.phone}
                 </a>
               </InfoCard>
@@ -70,15 +73,15 @@ export default function Contact() {
             <InfoCard icon="clock" label={t.contact.hoursLabel}>
               <ul className="space-y-2">
                 {t.contact.hours.map((row) => (
-                  <li key={row.days} className="flex justify-between gap-6 border-b border-dashed border-tk-line pb-2 last:border-0 last:pb-0">
+                  <li key={row.days} className="flex flex-wrap justify-between gap-x-4 gap-y-0.5 border-b border-dashed border-tk-line pb-2 last:border-0 last:pb-0">
                     <span className="text-tk-ink-soft">{row.days}</span>
-                    <span className="font-medium">{row.time}</span>
+                    <span className="font-medium whitespace-nowrap">{row.time}</span>
                   </li>
                 ))}
               </ul>
             </InfoCard>
 
-            <div className="flex gap-3">
+            <div className="grid grid-cols-1 gap-3 min-[380px]:grid-cols-2">
               <SocialLink href={business.instagramUrl} icon="instagram" label={t.contact.instagramLabel} handle={business.instagramHandle} />
               <SocialLink href={business.tiktokUrl} icon="tiktok" label={t.contact.tiktokLabel} handle={business.tiktokHandle} />
             </div>
@@ -98,7 +101,7 @@ export default function Contact() {
             </Button>
           </Reveal>
 
-          <Reveal delay={120} className="lg:col-span-7">
+          <Reveal delay={120} className="min-w-0 lg:col-span-7">
             <form
               noValidate
               onSubmit={handleSubmit}
@@ -196,9 +199,9 @@ function SocialLink({ href, icon, label, handle }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-1 items-center gap-3 rounded-[1.5rem] bg-white p-4 ring-1 ring-tk-line transition-all duration-300 hover:-translate-y-0.5 hover:ring-tk-pink/40"
+      className="group flex min-w-0 items-center gap-3 rounded-[1.5rem] bg-white p-4 ring-1 ring-tk-line transition-all duration-300 hover:-translate-y-0.5 hover:ring-tk-pink/40"
     >
-      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tk-ink text-tk-paper transition-colors group-hover:bg-tk-pink">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-tk-ink text-tk-paper transition-colors group-hover:bg-tk-pink">
         <SvgIcon name={icon} className="h-[18px] w-[18px]" />
       </span>
       <span className="min-w-0">

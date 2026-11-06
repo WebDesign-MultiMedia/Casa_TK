@@ -61,19 +61,20 @@ export default function Footer() {
             <p className="text-xs font-semibold tracking-[0.18em] text-tk-pink-dark uppercase">{t.contact.hoursLabel}</p>
             <ul className="mt-4 space-y-2.5 text-sm">
               {t.contact.hours.map((row) => (
-                <li key={row.days} className="flex justify-between gap-6 border-b border-dashed border-tk-line pb-2.5">
+                <li key={row.days} className="flex flex-wrap justify-between gap-x-6 gap-y-0.5 border-b border-dashed border-tk-line pb-2.5">
                   <span className="text-tk-ink-soft">{row.days}</span>
-                  <span className="font-medium">{row.time}</span>
+                  <span className="font-medium whitespace-nowrap">{row.time}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-5 text-sm text-tk-ink-soft">
-              {business.address.line1}, {business.address.line2}
-              <span className="mx-2 text-tk-line">|</span>
-              <a href={`tel:${business.phoneHref}`} className="transition-colors hover:text-tk-ink">
+            <div className="mt-5 flex flex-col gap-1 text-sm text-tk-ink-soft sm:flex-row sm:flex-wrap sm:gap-x-6">
+              <p>
+                {business.address.line1}, {business.address.line2}
+              </p>
+              <a href={`tel:${business.phoneHref}`} className="self-start transition-colors hover:text-tk-ink">
                 {business.phone}
               </a>
-            </p>
+            </div>
           </div>
         </div>
 
